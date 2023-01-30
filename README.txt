@@ -1,6 +1,5 @@
-# Retail Order Management System
-Coming Soon.
+Retail Order Management System
 
-Using Spring Boot 3 and Spring Security 6 as Backend
+Using a shoe store as an example, website created for displaying products, including shopping cart and user login features, as well as admin level access to order history across all users.
 
-Using React+Tailwind Frontend
+Uses React + Redux, Spring Security 3
