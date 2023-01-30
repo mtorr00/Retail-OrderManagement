@@ -29,7 +29,7 @@ const ShippingScreen = ({ history }) => {
           className="Login col-md-8 col-lg-4 col-11"
           onSubmit={submitHandler}
         >
-          <h6>ĐỊA CHỈ GIAO HÀNG</h6>
+          <h6>Shipping Address</h6>
           <input
             type="text"
             placeholder="Enter address"
@@ -58,7 +58,7 @@ const ShippingScreen = ({ history }) => {
             required
             onChange={(e) => setCountry(e.target.value)}
           />
-          <button type="submit">Tiếp tục</button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </>

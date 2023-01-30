@@ -68,7 +68,7 @@ const PlaceOrderScreen = ({ history }) => {
               </div>
               <div className="col-md-8 center">
                 <h5>
-                  <strong>Khách hàng</strong>
+                  <strong>Customer</strong>
                 </h5>
                 <p>{userInfo.name}</p>
                 <p>{userInfo.email}</p>
@@ -85,10 +85,10 @@ const PlaceOrderScreen = ({ history }) => {
               </div>
               <div className="col-md-8 center">
                 <h5>
-                  <strong>Thông tin mua hàng</strong>
+                  <strong>Purchase Information</strong>
                 </h5>
-                <p>Vận chuyển: {cart.shippingAddress.country}</p>
-                <p>Thanh toán: {cart.paymentMethod}</p>
+                <p>Shipping Address: {cart.shippingAddress.country}</p>
+                <p>Payment: {cart.paymentMethod}</p>
               </div>
             </div>
           </div>
@@ -102,7 +102,7 @@ const PlaceOrderScreen = ({ history }) => {
               </div>
               <div className="col-md-8 center">
                 <h5>
-                  <strong>Địa chỉ giao hàng</strong>
+                  <strong>Delivery Address</strong>
                 </h5>
                 <p>
                   {cart.shippingAddress.city},{" "}
@@ -131,11 +131,11 @@ const PlaceOrderScreen = ({ history }) => {
                       </Link>
                     </div>
                     <div className="mt-3 mt-md-0 col-md-2 col-6  d-flex align-items-center flex-column justify-content-center ">
-                      <h4>SỐ LƯỢNG</h4>
+                      <h4>Amount</h4>
                       <h6>{item.qty}</h6>
                     </div>
                     <div className="mt-3 mt-md-0 col-md-2 col-6 align-items-end  d-flex flex-column justify-content-center ">
-                      <h4>Tổng tiền</h4>
+                      <h4>Total</h4>
                       <h6>${item.qty * item.price}</h6>
                     </div>
                   </div>
@@ -149,25 +149,25 @@ const PlaceOrderScreen = ({ history }) => {
               <tbody>
                 <tr>
                   <td>
-                    <strong>Mua hàng</strong>
+                    <strong>Purchase</strong>
                   </td>
                   <td>{cart.itemsPrice}Đ</td>
                 </tr>
                 <tr>
                   <td>
-                    <strong>Vận chuyển</strong>
+                    <strong>Delivery Fee</strong>
                   </td>
                   <td>{cart.shippingPrice}Đ</td>
                 </tr>
                 <tr>
                   <td>
-                    <strong>Phí bưu điện</strong>
+                    <strong>Postage Fee</strong>
                   </td>
                   <td>{cart.taxPrice}Đ</td>
                 </tr>
                 <tr>
                   <td>
-                    <strong>Thành tiền</strong>
+                    <strong>Total</strong>
                   </td>
                   <td>{cart.totalPrice}Đ</td>
                 </tr>
@@ -175,7 +175,7 @@ const PlaceOrderScreen = ({ history }) => {
             </table>
             {cart.cartItems.length === 0 ? null : (
               <button type="submit" onClick={placeOrderHandler}>
-                THANH TOÁN
+                Pay
               </button>
             )}
             {error && (

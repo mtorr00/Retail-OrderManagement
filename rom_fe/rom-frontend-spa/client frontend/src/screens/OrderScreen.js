@@ -79,7 +79,7 @@ const OrderScreen = ({ match }) => {
                   </div>
                   <div className="col-md-8 center">
                     <h5>
-                      <strong>Khách hàng</strong>
+                      <strong>Customer</strong>
                     </h5>
                     <p>{order.user.name}</p>
                     <p>
@@ -100,20 +100,20 @@ const OrderScreen = ({ match }) => {
                   </div>
                   <div className="col-md-8 center">
                     <h5>
-                      <strong>Thông tin mua hàng</strong>
+                      <strong>Purchase Information</strong>
                     </h5>
-                    <p>Vận chuyển: {order.shippingAddress.country}</p>
-                    <p>Phương thức thanh toán: {order.paymentMethod}</p>
+                    <p>Shipping Address: {order.shippingAddress.country}</p>
+                    <p>Payment Method: {order.paymentMethod}</p>
                     {order.isPaid ? (
                       <div className="bg-info p-2 col-12">
                         <p className="text-white text-center text-sm-start">
-                          Đã thanh toán vào {moment(order.paidAt).calendar()}
+                          Paid on {moment(order.paidAt).calendar()}
                         </p>
                       </div>
                     ) : (
                       <div className="bg-danger p-2 col-12">
                         <p className="text-white text-center text-sm-start">
-                          Chưa thanh toán
+                          Not Paid for yet
                         </p>
                       </div>
                     )}
@@ -130,7 +130,7 @@ const OrderScreen = ({ match }) => {
                   </div>
                   <div className="col-md-8 center">
                     <h5>
-                      <strong>Địa chỉ giao hàng</strong>
+                      <strong>Delivery Address</strong>
                     </h5>
                     <p>
                       {order.shippingAddress.city},{" "}
@@ -140,13 +140,13 @@ const OrderScreen = ({ match }) => {
                     {order.isDelivered ? (
                       <div className="bg-info p-2 col-12">
                         <p className="text-white text-center text-sm-start">
-                          Đã giao hàng vào {moment(order.deliveredAt).calendar()}
+                          Delivered on {moment(order.deliveredAt).calendar()}
                         </p>
                       </div>
                     ) : (
                       <div className="bg-danger p-2 col-12">
                         <p className="text-white text-center text-sm-start">
-                          Chưa giao hàng
+                          Not Delivered Yet
                         </p>
                       </div>
                     )}
@@ -159,7 +159,7 @@ const OrderScreen = ({ match }) => {
               <div className="col-lg-8">
                 {order.orderItems.length === 0 ? (
                   <Message variant="alert-info mt-5">
-                    Giỏ hàng của bạn rỗng
+                    Your shopping cart is empty
                   </Message>
                 ) : (
                   <>
@@ -174,11 +174,11 @@ const OrderScreen = ({ match }) => {
                           </Link>
                         </div>
                         <div className="mt-3 mt-md-0 col-md-2 col-6  d-flex align-items-center flex-column justify-content-center ">
-                          <h4>SỐ LƯỢNG</h4>
+                          <h4>Amount</h4>
                           <h6>{item.qty}</h6>
                         </div>
                         <div className="mt-3 mt-md-0 col-md-2 col-6 align-items-end  d-flex flex-column justify-content-center ">
-                          <h4>TỔNG GIÁ</h4>
+                          <h4>Total</h4>
                           <h6>${item.qty * item.price}</h6>
                         </div>
                       </div>
@@ -192,25 +192,25 @@ const OrderScreen = ({ match }) => {
                   <tbody>
                     <tr>
                       <td>
-                        <strong>Mua hàng</strong>
+                        <strong>Purchase</strong>
                       </td>
                       <td>${order.itemsPrice}</td>
                     </tr>
                     <tr>
                       <td>
-                        <strong>Vận chuyển</strong>
+                        <strong>Delivery Fee</strong>
                       </td>
                       <td>${order.shippingPrice}</td>
                     </tr>
                     <tr>
                       <td>
-                        <strong>Phí bưu điện</strong>
+                        <strong>Postage Fee</strong>
                       </td>
                       <td>${order.taxPrice}</td>
                     </tr>
                     <tr>
                       <td>
-                        <strong>Thành tiền</strong>
+                        <strong>Total</strong>
                       </td>
                       <td>${order.totalPrice}</td>
                     </tr>

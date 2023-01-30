@@ -32,8 +32,8 @@ const Header = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-6 d-flex align-items-center display-none">
-              <p>0865447141</p>
-              <p>anhtheboy011@gmail.com</p>
+              <p>8654470141</p>
+              <p>ShoesShop@hotmail.com</p>
             </div>
             <div className=" col-12 col-lg-6 justify-content-center justify-content-lg-end d-flex align-items-center">
               <a href="https://www.facebook.com/toiladat.39" target="_blank" rel="noreferrer">
@@ -126,11 +126,11 @@ const Header = () => {
                     <input
                       type="search"
                       className="form-control rounded search"
-                      placeholder="Tìm kiếm sản phẩm"
+                      placeholder="Search terms here"
                       onChange={(e) => setKeyword(e.target.value)}
                     />
                     <button type="submit" className="search-button">
-                      Tìm kiếm
+                      Search
                     </button>
                   </form>
                 </div>
@@ -151,11 +151,11 @@ const Header = () => {
                   <input
                     type="search"
                     className="form-control rounded search"
-                    placeholder="Tìm kiếm sản phẩm"
+                    placeholder="Search"
                     onChange={(e) => setKeyword(e.target.value)}
                   />
                   <button type="submit" className="search-button">
-                    Tìm kiếm
+                    Search
                   </button>
                 </form>
               </div>
@@ -173,7 +173,7 @@ const Header = () => {
                     </button>
                     <div className="dropdown-menu">
                       <Link className="dropdown-item" to="/profile">
-                        Thông tin người dùng
+                        Profile
                       </Link>
 
                       <Link
@@ -181,14 +181,14 @@ const Header = () => {
                         to="#"
                         onClick={logoutHandler}
                       >
-                        Đăng xuất
+                        Logout
                       </Link>
                     </div>
                   </div>
                 ) : (
                   <>
-                    <Link to="/register">Đăng ký</Link>
-                    <Link to="/login">Đăng nhập</Link>
+                    <Link to="/register">Register</Link>
+                    <Link to="/login">Login</Link>
                   </>
                 )}
 

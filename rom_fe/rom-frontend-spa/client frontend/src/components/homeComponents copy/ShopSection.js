@@ -56,7 +56,7 @@ const ShopSection = (props) => {
                             {product.discountID !== "" ? (
                               <p>
                                 <NavBtnLink to={''}>
-                                  Đang hạ giá
+                                  Discount
                                 </NavBtnLink>
                               </p>
                               
@@ -64,9 +64,9 @@ const ShopSection = (props) => {
                             
                             <Rating
                               value={product.rating}
-                              text={`${product.numReviews} Đánh giá`}
+                              text={`${product.numReviews} Rating`}
                             />
-                            <h3>{product.price}Đ</h3>
+                            <h3>${product.price}</h3>
                           </div>
                         </div>
                       </div>

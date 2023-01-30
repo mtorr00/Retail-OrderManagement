@@ -43,7 +43,7 @@ const Register = ({ location, history }) => {
         >
           <input
             type="text"
-            placeholder="Tên người dùng"
+            placeholder="Username"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -55,13 +55,13 @@ const Register = ({ location, history }) => {
           />
           <input
             type="password"
-            placeholder="Mật khẩu"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <input
             type="text"
-            placeholder="Số điện thoại"
+            placeholder="Phone number"
             value={telephone}
             onChange={(e) => setTelephone(e.target.value)}
           />

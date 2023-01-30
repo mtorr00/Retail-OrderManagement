@@ -85,38 +85,38 @@ const SingleProduct = ({ history, match }) => {
 
                   <div className="product-count col-lg-7 ">
                     <div className="flex-box d-flex justify-content-between align-items-center">
-                      <h6>Giá</h6>
+                      <h6>Price</h6>
                       {(discount != null && discount.discount_percent != null) ? (
-                        <span><p>Giá gốc: {product.price}Đ</p> Giảm còn: {product.price-(product.price*discount.discount_percent)}Đ</span>
+                        <span><p>Cost: ${product.price}</p> Reduced: ${product.price-(product.price*discount.discount_percent)}</span>
                       ): <span>{product.price}Đ</span>}
                       
                     </div>
                     <div className="flex-box d-flex justify-content-between align-items-center">
-                      <h6>Tình trạng</h6>
+                      <h6>Stock Status</h6>
                       {product.countInStock > 0 ? (
-                        <span>Còn Hàng</span>
+                        <span>Current Stock</span>
                       ) : (
-                        <span>Hết hàng</span>
+                        <span>Out of stock</span>
                       )}
                     </div>
                     <div className="flex-box d-flex justify-content-between align-items-center">
-                      <h6>Đánh giá</h6>
+                      <h6>Rating</h6>
                       <Rating
                         value={product.rating}
-                        text={`${product.numReviews} đánh giá`}
+                        text={`${product.numReviews} Rating`}
                       />
                     </div>
                     <div className="flex-box d-flex justify-content-between align-items-center">
-                      <h6>Giảm giá</h6>
+                      <h6>Discount</h6>
                       {discount != null ? (
                         discount.name
-                      ) : <p>Không</p>}
+                      ) : <p>No</p>}
                       
                     </div>
                     {product.countInStock > 0 ? (
                       <>
                         <div className="flex-box d-flex justify-content-between align-items-center">
-                          <h6>Số lượng</h6>
+                          <h6>Amount</h6>
                           <select
                             value={qty}
                             onChange={(e) => setQty(e.target.value)}
@@ -146,9 +146,9 @@ const SingleProduct = ({ history, match }) => {
             {/* RATING */}
             <div className="row my-5">
               <div className="col-md-6">
-                <h6 className="mb-3">BÌNH LUẬN</h6>
+                <h6 className="mb-3">Comments</h6>
                 {product.reviews.length === 0 && (
-                  <Message variant={"alert-info mt-3"}>Chưa có bình luận</Message>
+                  <Message variant={"alert-info mt-3"}>No reviews / comments at this time</Message>
                 )}
                 {product.reviews.map((review) => (
                   <div
@@ -165,7 +165,7 @@ const SingleProduct = ({ history, match }) => {
                 ))}
               </div>
               <div className="col-md-6">
-                <h6>VIẾT XUỐNG BÌNH LUẬN CỦA BẠN</h6>
+                <h6>Leave a review / comment</h6>
                 <div className="my-4">
                   {loadingCreateReview && <Loading />}
                   {errorCreateReview && (
@@ -183,12 +183,12 @@ const SingleProduct = ({ history, match }) => {
                         onChange={(e) => setRating(e.target.value)}
                         className="col-12 bg-light p-3 mt-2 border-0 rounded"
                       >
-                        <option value="">Chọn con tim hay là nghe lý trí...</option>
-                        <option value="1">1 - Tệ</option>
-                        <option value="2">2 - Tạm</option>
-                        <option value="3">3 - Tốt</option>
-                        <option value="4">4 - Rất tốt</option>
-                        <option value="5">5 - Tuyệt vời</option>
+                        <option value="">Rate the product...</option>
+                        <option value="1">1 - Bad</option>
+                        <option value="2">2 - Okay</option>
+                        <option value="3">3 - Good</option>
+                        <option value="4">4 - Very Good</option>
+                        <option value="5">5 - Great</option>
                       </select>
                     </div>
                     <div className="my-4">
@@ -205,7 +205,7 @@ const SingleProduct = ({ history, match }) => {
                         disabled={loadingCreateReview}
                         className="col-12 bg-black border-0 p-3 rounded text-white"
                       >
-                        BÌNH LUẬN
+                        Comment
                       </button>
                     </div>
                   </form>
